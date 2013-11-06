@@ -1,3 +1,22 @@
+"---------------------------------------------------------------------------
+" Patch
+"---------------------------------------------------------------------------
+" jedi-vim
+" === let g:jedi#popup_select_first = 0 が効かない問題に対応: 2013/11/06
+" ~/.vim/bundle/jedi-vim/ftplugin/python/jedi.vim
+" -----
+"let s:save_cpo = &cpo
+"set cpo&vim
+
+"if g:jedi#popup_select_first == 0
+  "inoremap <buffer> . .<C-R>=jedi#complete_opened() ? "" : "\<lt>C-X>\<lt>C-O>\<lt>C-P>"<CR>
+"endif
+
+"let &cpo = s:save_cpo
+"unlet s:save_cpo
+" -----
+
+
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
     autocmd!
@@ -79,7 +98,7 @@ else
     NeoBundle "vim-scripts/YankRing.vim"     " ヤンクを循環
     NeoBundle "tpope/vim-surround"           " 引用符整形
     NeoBundle "vim-scripts/Align"            " テキスト整形
-    NeoBundleLazy "scrooloose/nerdcommenter", {
+    NeoBundle "scrooloose/nerdcommenter", {
         \ "autoload": {
         \   "mappings": ['<Plug>NERDCommenterToggle'],
         \}}                                  " コメント整形
@@ -126,6 +145,10 @@ else
 
     " ---言語
     " Python
+    NeoBundleLazy "andviro/flake8-vim", {
+        \ "autoload": {
+        \   "filetypes": ["python", "python3", "djangohtml"],
+        \ }}
     "NeoBundle "lambdalisue/vim-django-support"
     "NeoBundle "jmcantrell/vim-virtualenv"
     NeoBundleLazy "davidhalter/jedi-vim", {
@@ -135,6 +158,10 @@ else
         \ "build": {
         \   "mac": "pip install jedi",
         \   "unix": "pip install jedi",
+        \ }}
+    NeoBundleLazy "mkomitee/vim-gf-python", {
+        \ "autoload": {
+        \   "filetypes": ["python", "python3", "djangohtml"],
         \ }}
 
     " HTML
@@ -523,22 +550,41 @@ endfunction
 "---------------------------------------------------------------------------
 " tagbar
 "---------------------------------------------------------------------------
-nmap <Leader>t :TagbarToggle<CR>
+nmap <Leader>o :TagbarToggle<CR>
 
 "---------------------------------------------------------------------------
 " jedi-vim
 "---------------------------------------------------------------------------
+
 let s:hooks = neobundle#get_hooks("jedi-vim")
 function! s:hooks.on_source(bundle)
     " jediにvimの設定を任せると'completeopt+=preview'するので
-    " 自動設定機能をOFFにし手動で設定を行う
-    let g:jedi#auto_vim_configuration = 0
+    " 自動設定機能をoffにし手動で設定を行う
+    let g:jedi#auto_vim_configuration = 1
+    " quickrunと被るため大文字に変更
+    let g:jedi#rename_command = '<leader>r'
+    " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
+    let g:jedi#goto_assignments_command = '<leader>g'
     " 補完の最初の項目が選択された状態だと使いにくいためオフにする
     let g:jedi#popup_select_first = 0
-    " quickrunと被るため大文字に変更
-    let g:jedi#rename_command = '<Leader>R'
-    " gundoと被るため大文字に変更 (2013-06-24 10:00 追記）
-    let g:jedi#goto_assignments_command = '<Leader>G'
+endfunction
+
+"---------------------------------------------------------------------------
+" flake8-vim
+"---------------------------------------------------------------------------
+let s:hooks = neobundle#get_hooks("flake8-vim")
+function! s:hooks.on_source(bundle)
+    "保存時に自動でチェック
+    let g:PyFlakeOnWrite = 1
+
+    "解析種別を設定
+    let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+
+    "McCabe複雑度の最大値
+    let g:PyFlakeDefaultComplexity=10
+
+    "visualモードでQを押すと自動で修正
+    let g:PyFlakeRangeCommand = 'Q'
 endfunction
 
 "---------------------------------------------------------------------------
