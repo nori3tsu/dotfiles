@@ -16,5 +16,10 @@ do
     ln -s $HOME/.dotfiles/$file $HOME/$file
 done
 
+# .env
+if [ ! -f $HOME/.env ]; then
+    touch $HOME/.env
+fi
+
 # bin
 mkdir -p $HOME/bin
