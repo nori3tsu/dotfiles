@@ -150,7 +150,7 @@ else
         \   "filetypes": ["python", "python3", "djangohtml"],
         \ }}
     "NeoBundle "lambdalisue/vim-django-support"
-    "NeoBundle "jmcantrell/vim-virtualenv"
+    NeoBundle "jmcantrell/vim-virtualenv"
     NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"],
@@ -191,7 +191,7 @@ set textwidth=0         " 自動的に改行が入るのを無効化
 "set colorcolumn=80      " その代わり80文字目にラインを入れる
 set ruler               " ルーラーの表示
 set cursorline          " カーソルラインの表示
-set cursorcolumn        " カーソルカラムの表示
+"set cursorcolumn        " カーソルカラムの表示
 
 " スクリーンベルを無効化
 set t_vb=
@@ -297,6 +297,9 @@ endif
 set nowritebackup
 set nobackup
 set noswapfile
+
+" angularのファイルタイプを設定
+autocmd BufNewFile,BufRead *.html set filetype=html.angular_html
 
 "---------------------------------------------------------------------------
 " マクロおよびキー設定
@@ -477,13 +480,19 @@ endfunction
 " Vimfiler
 "---------------------------------------------------------------------------
 nnoremap <Leader>e :VimFilerExplorer<CR>
+"autocmd VimEnter * :VimFiler -buffer-name=explorer -split -toggle -no-quit -winwidth=35
+"autocmd VimEnter * :VimFilerExplorer
 " close vimfiler automatically when there are only vimfiler open
-autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
+"autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 let s:hooks = neobundle#get_hooks("vimfiler")
 function! s:hooks.on_source(bundle)
     let g:vimfiler_edit_action='tabopen'
     let g:vimfiler_as_default_explorer = 1
     let g:vimfiler_enable_auto_cd = 1
+
+    " Safe Mode 無効
+    let g:vimfiler_safe_mode_by_default = 0
+    let g:netrw_liststyle = 3
 
     " .から始まるファイルおよび.pycで終わるファイルを不可視パターンに
     let g:vimfiler_ignore_pattern = "\%(^\..*\|\.pyc$\)"
@@ -524,6 +533,7 @@ function! s:hooks.on_source(bundle)
     let g:neosnippet#enable_snipmate_compatibility = 1
     " Tell Neosnippet about the other snippets
     let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
+
 endfunction
 
 "---------------------------------------------------------------------------
@@ -619,3 +629,8 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 set laststatus=2
+
+"---------------------------------------------------------------------------
+" emmet-vim
+"---------------------------------------------------------------------------
+let g:user_emmet_leader_key = '<C-e>'
