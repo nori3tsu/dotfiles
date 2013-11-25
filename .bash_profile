@@ -5,6 +5,12 @@ if [ -d $HOME/.pythonz ]; then
     source $HOME/.pythonz/etc/bashrc
 fi
 
+# rbenv
+if [ -f /usr/local/bin/rbenv ]; then
+    eval "$(rbenv init -)"
+    export PATH="$HOME/.rbenv/shims:$PATH"
+fi
+
 # virtualenv
 if [ -d $HOME/.virtualenvs ]; then
     # virtualenv
