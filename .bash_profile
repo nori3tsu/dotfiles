@@ -19,6 +19,10 @@ if [ -d $HOME/.virtualenvs ]; then
     export PIP_RESPECT_VIRTUALENV=true
 fi
 
+# git
+git config --global color.ui auto
+git config --global http.sslVerify false
+
 # bashmarks
 if [ -f $HOME/.local/bin/bashmarks.sh ]; then
     source $HOME/.local/bin/bashmarks.sh
