@@ -22,9 +22,6 @@ augroup MyAutoCmd
     autocmd!
 augroup END
 
-"===========================================================================
-" Unite本体
-"===========================================================================
 let s:noplugin = 0
 let s:bundle_root = expand('~/.vim/bundle')
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
@@ -396,10 +393,10 @@ else
     "---------------------------------------------------------------------------
     " コーディングスタイル
     "---------------------------------------------------------------------------
-    NeoBundleLazy "hallettj/jslint.vim", {
-        \ "autoload": {
-        \   "filetypes": ["javascript"],
-        \ }}
+    "NeoBundleLazy "hallettj/jslint.vim", {
+        "\ "autoload": {
+        "\   "filetypes": ["javascript"],
+        "\ }}
 
     "---------------------------------------------------------------------------
     " jsdoc入力
@@ -621,6 +618,7 @@ nnoremap <silent> [toggle]s :setl spell!<CR>:setl spell?<CR>
 nnoremap <silent> [toggle]l :setl list!<CR>:setl list?<CR>
 nnoremap <silent> [toggle]t :setl expandtab!<CR>:setl expandtab?<CR>
 nnoremap <silent> [toggle]w :setl wrap!<CR>:setl wrap?<CR>
+nnoremap <silent> [toggle]p :setl paste!<CR>:setl paste?<CR>
 
 " タブ関連を設定
 " Anywhere SID.
