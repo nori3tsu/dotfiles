@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# prompt
+export PS1="[\t \u@\h \W]\$ "
+
 # pythonz
 if [ -d $HOME/.pythonz ]; then
     source $HOME/.pythonz/etc/bashrc
