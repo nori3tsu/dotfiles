@@ -41,7 +41,14 @@ else
     " 非同期通信を可能にする
     " 'build'が指定されているのでインストール時に自動的に
     " 指定されたコマンドが実行され vimproc がコンパイルされる
-    NeoBundle "Shougo/vimproc", { "build": {   "windows"   : "make -f make_mingw32.mak",   "cygwin"    : "make -f make_cygwin.mak",   "mac"       : "make -f make_mac.mak",   "unix"      : "make -f make_unix.mak", }}
+    NeoBundle "Shougo/vimproc", {
+                \     "build": {
+                \         "windows": "make -f make_mingw32.mak",
+                \         "cygwin": "make -f make_cygwin.mak",
+                \         "mac": "make -f make_mac.mak",
+                \         "unix": "make -f make_unix.mak",
+                \     }
+                \ }
 
     "===========================================================================
     " Unite
@@ -85,12 +92,23 @@ else
     "---------------------------------------------------------------------------
     " アウトライン
     "---------------------------------------------------------------------------
-    NeoBundleLazy 'h1mesuke/unite-outline', { "autoload": {   "unite_sources": ["outline"], }}
+    NeoBundleLazy 'h1mesuke/unite-outline', {
+                \     "autoload": {
+                \         "unite_sources": ["outline"],
+                \     }
+                \ }
 
     "---------------------------------------------------------------------------
     " ファイラ
     "---------------------------------------------------------------------------
-    NeoBundleLazy "Shougo/vimfiler", { "depends": ["Shougo/unite.vim"], "autoload": {   "commands": ["VimFilerTab", "VimFiler", "VimFilerExplorer"],   "mappings": ['<Plug>(vimfiler_switch)'],   "explorer": 1, }}
+    NeoBundleLazy "Shougo/vimfiler", {
+                \     "depends": ["Shougo/unite.vim"],
+                \     "autoload": {
+                \             "commands": ["VimFilerTab", "VimFiler", "VimFilerExplorer"],
+                \             "mappings": ['<Plug>(vimfiler_switch)'],
+                \             "explorer": 1,
+                \         }
+                \ }
     nnoremap <Leader>e :VimFilerExplorer<CR>
     "autocmd VimEnter * :VimFiler -buffer-name=explorer -split -toggle -no-quit -winwidth=35
     "autocmd VimEnter * :VimFilerExplorer
@@ -146,20 +164,36 @@ else
     "---------------------------------------------------------------------------
     " TODO管理
     "---------------------------------------------------------------------------
-    NeoBundleLazy "vim-scripts/TaskList.vim", { "autoload": {   "mappings": ['<Plug>TaskList'],}}
+    NeoBundleLazy "vim-scripts/TaskList.vim", {
+                \     "autoload": {
+                \         "mappings": ['<Plug>TaskList'],
+                \     }
+                \ }
     nmap <Leader>T <plug>TaskList
 
 
     "---------------------------------------------------------------------------
     " 構文エラー表示
     "---------------------------------------------------------------------------
-    NeoBundleLazy "scrooloose/syntastic", { "build": {   "mac": ["pip install flake8", "npm -g install coffeelint"],   "unix": ["pip install flake8", "npm -g install coffeelint"], }}
+    NeoBundleLazy "scrooloose/syntastic", {
+                \     "build": {
+                \         "mac": ["pip install flake8", "npm -g install coffeelint"],
+                \         "unix": ["pip install flake8", "npm -g install coffeelint"],
+                \     }
+                \ }
     let g:syntastic_javascript_checker = "jshint"
 
     "---------------------------------------------------------------------------
     " クラスアウトライン
     "---------------------------------------------------------------------------
-    NeoBundleLazy 'majutsushi/tagbar', { "autoload": {   "commands": ["TagbarToggle"], }, "build": {   "mac": "brew install ctags", }}
+    NeoBundleLazy 'majutsushi/tagbar', {
+                \     "autoload": {
+                \         "commands": ["TagbarToggle"],
+                \     },
+                \     "build": {
+                \         "mac": "brew install ctags",
+                \     }
+                \ }
     nmap <Leader>o :TagbarToggle<CR>
 
 
@@ -204,7 +238,11 @@ else
     "---------------------------------------------------------------------------
     " コメント整形
     "---------------------------------------------------------------------------
-    NeoBundle "scrooloose/nerdcommenter", { "autoload": {   "mappings": ['<Plug>NERDCommenterToggle'],}}
+    NeoBundle "scrooloose/nerdcommenter", {
+                \     "autoload": {
+                \         "mappings": ['<Plug>NERDCommenterToggle'],
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("nerdcommenter")
     function! s:hooks.on_source(bundle)
         let NERDSpaceDelims = 1
@@ -216,7 +254,11 @@ else
     "---------------------------------------------------------------------------
     " undo強化
     "---------------------------------------------------------------------------
-    NeoBundleLazy "sjl/gundo.vim", { "autoload": {   "commands": ['GundoToggle'],}}
+    NeoBundleLazy "sjl/gundo.vim", {
+                \     "autoload": {
+                \         "commands": ['GundoToggle'],
+                \     }
+                \ }
     nnoremap <Leader>g :GundoToggle<CR>
 
 
@@ -250,7 +292,12 @@ else
     "---------------------------------------------------------------------------
     " スニペット
     "---------------------------------------------------------------------------
-    NeoBundleLazy "Shougo/neosnippet.vim", { "depends": ["honza/vim-snippets"], "autoload": {   "insert": 1, }}
+    NeoBundleLazy "Shougo/neosnippet.vim", {
+                \     "depends": ["honza/vim-snippets"],
+                \         "autoload": {
+                \         "insert": 1,
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("neosnippet.vim")
     function! s:hooks.on_source(bundle)
         " Plugin key-mappings.
@@ -279,7 +326,11 @@ else
     "---------------------------------------------------------------------------
     " コーディングスタイル
     "---------------------------------------------------------------------------
-    NeoBundleLazy "andviro/flake8-vim", { "autoload": {   "filetypes": ["python", "python3", "djangohtml"], }}
+    NeoBundleLazy "andviro/flake8-vim", {
+                \     "autoload": {
+                \         "filetypes": ["python", "python3", "djangohtml"],
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("flake8-vim")
     function! s:hooks.on_source(bundle)
         "保存時に自動でチェック
@@ -304,7 +355,15 @@ else
     "---------------------------------------------------------------------------
     " 補完
     "---------------------------------------------------------------------------
-    NeoBundleLazy "davidhalter/jedi-vim", { "autoload": {   "filetypes": ["python", "python3", "djangohtml"], }, "build": {   "mac": "pip install jedi",   "unix": "pip install jedi", }}
+    NeoBundleLazy "davidhalter/jedi-vim", {
+                \     "autoload": {
+                \         "filetypes": ["python", "python3", "djangohtml"],
+                \     },
+                \     "build": {
+                \         "mac": "pip install jedi",
+                \         "unix": "pip install jedi",
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("jedi-vim")
     function! s:hooks.on_source(bundle)
         " jediにvimの設定を任せると'completeopt+=preview'するので
@@ -322,13 +381,24 @@ else
     "---------------------------------------------------------------------------
     " gf移動強化
     "---------------------------------------------------------------------------
-    NeoBundleLazy "mkomitee/vim-gf-python", { "autoload": {   "filetypes": ["python", "python3", "djangohtml"], }}
+    NeoBundleLazy "mkomitee/vim-gf-python", {
+                \     "autoload": {
+                \         "filetypes": ["python", "python3", "djangohtml"],
+                \     }
+                \ }
 
     " Javascript
     "---------------------------------------------------------------------------
     " 補完
     "---------------------------------------------------------------------------
-    NeoBundleLazy 'marijnh/tern_for_vim', { 'build': {   'others': 'npm install' }, "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy 'marijnh/tern_for_vim', {
+                \     'build': {
+                \         'others': 'npm install'
+                \     },
+                \         "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("tern_for_vim")
     function! s:hooks.on_source(bundle)
         nnoremap <silent> <C-j>r :TernRename<CR>
@@ -337,7 +407,11 @@ else
     "---------------------------------------------------------------------------
     " 構文チェック
     "---------------------------------------------------------------------------
-    NeoBundleLazy 'felixge/vim-nodejs-errorformat', { "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy 'felixge/vim-nodejs-errorformat', {
+                \     "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     nmap <Leader><Leader> :w<CR>:make! \| botright cwindow<CR>
 
     "---------------------------------------------------------------------------
@@ -350,21 +424,37 @@ else
     "---------------------------------------------------------------------------
     " インデント
     "---------------------------------------------------------------------------
-    NeoBundleLazy "jiangmiao/simple-javascript-indenter", { "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy "jiangmiao/simple-javascript-indenter", {
+                \     "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     "---------------------------------------------------------------------------
     " シンタックスハイライト
     "---------------------------------------------------------------------------
-    NeoBundleLazy "jelera/vim-javascript-syntax", { "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy "jelera/vim-javascript-syntax", {
+                \     "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     "---------------------------------------------------------------------------
     " jQueryシンタックスハイライト
     "---------------------------------------------------------------------------
-    NeoBundleLazy "nono/jquery.vim", { "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy "nono/jquery.vim", {
+                \     "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
     "---------------------------------------------------------------------------
     " jsdoc入力
     "---------------------------------------------------------------------------
-    NeoBundleLazy "heavenshell/vim-jsdoc", { "autoload": {   "filetypes": ["javascript"], }}
+    NeoBundleLazy "heavenshell/vim-jsdoc", {
+                \     "autoload": {
+                \         "filetypes": ["javascript"],
+                \     }
+                \ }
     let s:hooks = neobundle#get_hooks("vim-jsdoc")
     function! s:hooks.on_source(bundle)
         let g:jsdoc_default_mapping = 1
@@ -381,7 +471,11 @@ else
     "---------------------------------------------------------------------------
     " vim上でプログラム実行
     "---------------------------------------------------------------------------
-    NeoBundleLazy "thinca/vim-quickrun", { "autoload": {   "mappings": [['nxo', '<Plug>(quickrun)']] }}
+    NeoBundleLazy "thinca/vim-quickrun", {
+                \     "autoload": {
+                \         "mappings": [['nxo', '<Plug>(quickrun)']]
+                \     }
+                \ }
     nmap <Leader>r <Plug>(quickrun)
     let s:hooks = neobundle#get_hooks("vim-quickrun")
     function! s:hooks.on_source(bundle)
