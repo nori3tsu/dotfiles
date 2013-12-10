@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# prompt
-export PS1="[\t \u@\h \W]\$ "
-
 # pythonz
 if [ -d $HOME/.pythonz ]; then
     source $HOME/.pythonz/etc/bashrc
@@ -40,3 +37,7 @@ if [ -f ~/.env ]; then
 fi
 
 export PATH=$PATH:$HOME/bin
+
+# prompt
+export PS1="[\D{%d %H:%M} \u\[\e[${PS_COLOR-1;34}m\]@\[\e[00m\]\h \w]\$ "
+
