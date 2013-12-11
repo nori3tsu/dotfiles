@@ -16,7 +16,6 @@
 "unlet s:save_cpo
 " -----
 
-
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
     autocmd!
@@ -56,7 +55,11 @@ else
     "---------------------------------------------------------------------------
     " Unite本体
     "---------------------------------------------------------------------------
-    NeoBundleLazy "Shougo/unite.vim", { "autoload": {   "commands": ["Unite", "UniteWithBufferDir"] }}
+    NeoBundleLazy "Shougo/unite.vim", {
+                \     "autoload": {
+                \         "commands": ["Unite", "UniteWithBufferDir"]
+                \     }
+                \ }
     nnoremap [unite] <Nop>
     nmap U [unite]
     nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -87,6 +90,11 @@ else
             nmap <buffer> <C-n> <Plug>(unite_select_next_line)
             nmap <buffer> <C-p> <Plug>(unite_select_previous_line)
         endfunction
+
+        " mru
+        let g:unite_source_mru_update_interval = 60 "seconds
+        let g:unite_source_file_mru_long_limit = 1000000
+        let g:unite_source_directory_mru_long_limit = 1000000
     endfunction
 
     "---------------------------------------------------------------------------
@@ -175,13 +183,17 @@ else
     "---------------------------------------------------------------------------
     " 構文エラー表示
     "---------------------------------------------------------------------------
-    NeoBundleLazy "scrooloose/syntastic", {
+    NeoBundle "scrooloose/syntastic", {
                 \     "build": {
-                \         "mac": ["pip install flake8", "npm -g install coffeelint"],
-                \         "unix": ["pip install flake8", "npm -g install coffeelint"],
+                \         "mac": ["pip install flake8", "npm -g install coffeelint", "npm -g install jslint", "gem install rubocop"],
+                \         "unix": ["pip install flake8", "npm -g install coffeelint", "npm -g install jslint", "gem install rubocop"],
                 \     }
                 \ }
-    let g:syntastic_javascript_checker = "jshint"
+    let g:syntastic_mode_map = { 'mode': 'passive',
+                \ 'active_filetypes': ['ruby', 'python', 'javascript'] }
+    let g:syntastic_javascript_checker = "jslint"
+    let g:syntastic_ruby_checkers = ['rubocop']
+    let g:syntastic_quiet_warnings = 0
 
     "---------------------------------------------------------------------------
     " クラスアウトライン
@@ -386,6 +398,9 @@ else
                 \         "filetypes": ["python", "python3", "djangohtml"],
                 \     }
                 \ }
+    " Ruby
+    " indent 2
+    autocmd MyAutoCmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
     " Javascript
     "---------------------------------------------------------------------------
@@ -401,7 +416,11 @@ else
                 \ }
     let s:hooks = neobundle#get_hooks("tern_for_vim")
     function! s:hooks.on_source(bundle)
-        nnoremap <silent> <C-j>r :TernRename<CR>
+        nnoremap <silent> <Leader>jd :TernDocBrowse<CR>
+        nnoremap <silent> <Leader>jf :TernDefTab<CR>
+        nnoremap <silent> <Leader>jt :TernType<CR>
+        nnoremap <silent> <Leader>jh :TernRefs<CR>
+        nnoremap <silent> <Leader>jR :TernRename<CR>
     endfunction
 
     "---------------------------------------------------------------------------
@@ -751,3 +770,6 @@ let s:local_vimrc = expand('~/.vimrc.local')
 if filereadable(s:local_vimrc)
     execute 'source ' . s:local_vimrc
 endif
+
+nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR>
+nnoremap <F6> :<C-u>source $MYVIMRC<CR>
