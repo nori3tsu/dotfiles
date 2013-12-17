@@ -185,13 +185,14 @@ else
     "---------------------------------------------------------------------------
     NeoBundle "scrooloose/syntastic", {
                 \     "build": {
-                \         "mac": ["pip install flake8", "npm -g install coffeelint", "npm -g install jslint", "gem install rubocop"],
-                \         "unix": ["pip install flake8", "npm -g install coffeelint", "npm -g install jslint", "gem install rubocop"],
+                \         "mac": ["pip install flake8", "npm -g install coffeelint", "npm -g install jshint", "gem install rubocop"],
+                \         "unix": ["pip install flake8", "npm -g install coffeelint", "npm -g install jshint", "gem install rubocop"],
                 \     }
                 \ }
     let g:syntastic_mode_map = { 'mode': 'passive',
-                \ 'active_filetypes': ['ruby', 'python', 'javascript'] }
-    let g:syntastic_javascript_checker = "jslint"
+                \ 'active_filetypes': ['ruby', 'python', 'javascript', 'coffee'] }
+    "let g:syntastic_javascript_checker = "jshint"
+    let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
     let g:syntastic_ruby_checkers = ['rubocop']
     let g:syntastic_quiet_warnings = 0
 
@@ -465,6 +466,16 @@ else
                 \     }
                 \ }
     au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+    "---------------------------------------------------------------------------
+    " CoffeeScriptシンタックスハイライト
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "kchmck/vim-coffee-script", {
+                \     "autoload": {
+                \         "filetypes": ["coffee"],
+                \     }
+                \ }
+    "au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+
 
     "---------------------------------------------------------------------------
     " jsdoc入力
