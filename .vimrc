@@ -474,7 +474,7 @@ else
                 \         "filetypes": ["coffee"],
                 \     }
                 \ }
-    "au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+    autocmd MyAutoCmd FileType coffee setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 
     "---------------------------------------------------------------------------
@@ -497,6 +497,9 @@ else
     "---------------------------------------------------------------------------
     NeoBundle "mattn/emmet-vim"
     let g:user_emmet_leader_key = '<C-e>'
+
+    " gfでdocumentRootから絶対パスで書かれているjsファイルなどを開けるようにする
+    autocmd MyAutoCmd FileType html :setlocal includeexpr=substitute(v:fname,'^\\/','','') | :setlocal path+=./;/
 
     "---------------------------------------------------------------------------
     " vim上でプログラム実行
