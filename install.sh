@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# vim syntax folder
+if [ ! -f $HOME/.vim/syntax ]; then
+    mkdir -p $HOME/.vim/syntax
+fi
+
 # NeoBundle
 if [ ! -d "$HOME/.vim/bundle" ]; then
     mkdir -p $HOME/.vim/bundle
@@ -15,6 +20,12 @@ if [ ! -f $HOME/.local/bin/bashmarks.sh ]; then
     make install
     cd
     rm -rf /tmp/bashmarks
+fi
+
+# GitHub Flavored Markdown Syntax
+if [ ! -f $HOME/.vim/syntax/ghmarkdown.vim ]; then
+    cd ~/.vim/syntax/
+    curl -LO https://raw.github.com/jtratner/vim-flavored-markdown/master/syntax/ghmarkdown.vim
 fi
 
 # dotfiles

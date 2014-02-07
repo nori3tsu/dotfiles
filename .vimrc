@@ -62,7 +62,8 @@ else
                 \ }
     nnoremap [unite] <Nop>
     nmap U [unite]
-    nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+    "nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+    nnoremap <silent> [unite]f :<C-u>Unite file<CR>
     nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
     nnoremap <silent> [unite]r :<C-u>Unite register<CR>
     nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
@@ -190,10 +191,11 @@ else
                 \     }
                 \ }
     let g:syntastic_mode_map = { 'mode': 'passive',
-                \ 'active_filetypes': ['ruby', 'python', 'javascript', 'coffee'] }
+                \ 'active_filetypes': ['ruby', 'javascript', 'coffee'] }
     "let g:syntastic_javascript_checker = "jshint"
     let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
     let g:syntastic_ruby_checkers = ['rubocop']
+    "let g:syntastic_python_checkers = ['pylint']
     let g:syntastic_quiet_warnings = 0
 
     "---------------------------------------------------------------------------
@@ -517,6 +519,20 @@ else
     "        \ }
     endfunction
 
+    " Markdown
+    "---------------------------------------------------------------------------
+    " vim-flavored-markdown
+    " GitHub Flavored Markdown
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "jtratner/vim-flavored-markdown", {
+                \     "autoload": {
+                \         "filetypes": ["markdown"],
+                \     }
+                \ }
+    let s:hooks = neobundle#get_hooks("vim-flavored-markdown")
+    function! s:hooks.on_source(bundle)
+    endfunction
+
     " インストールされていないプラグインのチェックおよびダウンロード
     NeoBundleCheck
 endif
@@ -572,6 +588,9 @@ colorscheme jellybeans
 " ファイルエンコードを自動判別
 set encoding=utf-8
 set fileencodings=ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,euc-jp,sjis,cp932,utf-8
+
+" md as markdown, instead of modula2
+autocmd MyAutoCmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
 "---------------------------------------------------------------------------
 " 検索関係
