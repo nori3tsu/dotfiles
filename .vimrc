@@ -629,7 +629,7 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
 " 保存時に行末の空白を削除
-autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre *.sh,*.js,*.css,*.rb,*.php,*.py,*.java,.vimrc :%s/\s\+$//ge
 
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
