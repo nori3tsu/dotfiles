@@ -672,6 +672,13 @@ set noswapfile
 " angularのファイルタイプを設定
 autocmd BufNewFile,BufRead *.html set filetype=html.angular_html
 
+" oでコメントを挿入しない
+" https://gist.github.com/rbtnn/8540338 （一部修正）
+augroup auto_comment_off
+	autocmd!
+	autocmd BufEnter * setlocal formatoptions-=r
+	autocmd BufEnter * setlocal formatoptions-=o
+augroup END
 "---------------------------------------------------------------------------
 " マクロおよびキー設定
 "---------------------------------------------------------------------------
