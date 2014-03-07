@@ -29,7 +29,7 @@ if [ ! -f $HOME/.vim/syntax/ghmarkdown.vim ]; then
 fi
 
 # dotfiles
-DOT_FILES=(.bash_profile .bashrc .vimrc .tmux.conf)
+DOT_FILES=(.bash_profile .bashrc .zprofile .zshrc .vimrc .tmux.conf)
 
 for file in ${DOT_FILES[@]}
 do
