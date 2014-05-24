@@ -592,6 +592,9 @@ set fileencodings=utf-8,ucs-bom,iso-2022-jp-3,iso-2022-jp,eucjp-ms,euc-jisx0213,
 " md as markdown, instead of modula2
 autocmd MyAutoCmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 
+" ベル音を消す
+set visualbell
+
 "---------------------------------------------------------------------------
 " 検索関係
 "---------------------------------------------------------------------------
