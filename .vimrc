@@ -561,6 +561,20 @@ else
     function! s:hooks.on_source(bundle)
     endfunction
 
+    " Gradle
+    "---------------------------------------------------------------------------
+    " vim-gradle
+    " Syntax highlight
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "tfnico/vim-gradle", {
+                \     "autoload": {
+                \         "filetypes": ["go"],
+                \     }
+                \ }
+    let s:hooks = neobundle#get_hooks("vim-gradle")
+    function! s:hooks.on_source(bundle)
+    endfunction
+
 
     " インストールされていないプラグインのチェックおよびダウンロード
     NeoBundleCheck
