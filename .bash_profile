@@ -36,7 +36,7 @@ if [ -f ~/.env ]; then
     source ~/.env
 fi
 
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # prompt
 export PS1="[\D{%d %H:%M} \u\[\e[${PS_COLOR-1;34}m\]@\[\e[00m\]\h \w]\$ "

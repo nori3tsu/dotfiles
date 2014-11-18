@@ -191,10 +191,10 @@ else
                 \     }
                 \ }
     let g:syntastic_mode_map = { 'mode': 'passive',
-                \ 'active_filetypes': ['ruby', 'javascript', 'coffee'] }
+                \ 'active_filetypes': ['javascript', 'coffee'] }
     "let g:syntastic_javascript_checker = "jshint"
     let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
-    let g:syntastic_ruby_checkers = ['rubocop']
+    "let g:syntastic_ruby_checkers = ['rubocop']
     "let g:syntastic_python_checkers = ['pylint']
     let g:syntastic_quiet_warnings = 0
 
@@ -333,6 +333,20 @@ else
 
     endfunction
 
+    ""---------------------------------------------------------------------------
+    "" タグ
+    ""---------------------------------------------------------------------------
+    "NeoBundleLazy "szw/vim-tags", {
+    "            \     "autoload": {
+    "            \         "filetypes": ["ruby"],
+    "            \     }
+    "            \ }
+    "let s:hooks = neobundle#get_hooks("vim-tags")
+    "function! s:hooks.on_source(bundle)
+    "    let g:vim_tags_project_tags_command = "/usr/local/Cellar/ctags/5.8/bin/ctags -f tags -R . 2>/dev/null"
+    "    let g:vim_tags_gems_tags_command = "/usr/local/Cellar/ctags/5.8/bin/ctags -R -f Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
+    "    set tags+=tags,Gemfile.lock.tags
+    "endfunction
 
     "===========================================================================
     " 言語
@@ -533,6 +547,35 @@ else
     function! s:hooks.on_source(bundle)
     endfunction
 
+    " Go
+    "---------------------------------------------------------------------------
+    " vim-go
+    " Syntax highlight
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "fatih/vim-go", {
+                \     "autoload": {
+                \         "filetypes": ["go"],
+                \     }
+                \ }
+    let s:hooks = neobundle#get_hooks("vim-go")
+    function! s:hooks.on_source(bundle)
+    endfunction
+
+    " Gradle
+    "---------------------------------------------------------------------------
+    " vim-gradle
+    " Syntax highlight
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "tfnico/vim-gradle", {
+                \     "autoload": {
+                \         "filetypes": ["go"],
+                \     }
+                \ }
+    let s:hooks = neobundle#get_hooks("vim-gradle")
+    function! s:hooks.on_source(bundle)
+    endfunction
+
+
     " インストールされていないプラグインのチェックおよびダウンロード
     NeoBundleCheck
 endif
@@ -632,7 +675,7 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 
 " 保存時に行末の空白を削除
-autocmd BufWritePre *.sh,*.js,*.css,*.rb,*.php,*.py,*.java,*.conf,*.vcl,.vimrc :%s/\s\+$//ge
+autocmd BufWritePre *.sh,*.js,*.css,*.rb,*.php,*.py,*.java,*.conf,*.vcl,*.xml,*.gradle,.vimrc :%s/\s\+$//ge
 
 " 対応括弧に'<'と'>'のペアを追加
 set matchpairs& matchpairs+=<:>
@@ -678,10 +721,11 @@ autocmd BufNewFile,BufRead *.html set filetype=html.angular_html
 " oでコメントを挿入しない
 " https://gist.github.com/rbtnn/8540338 （一部修正）
 augroup auto_comment_off
-	autocmd!
-	autocmd BufEnter * setlocal formatoptions-=r
-	autocmd BufEnter * setlocal formatoptions-=o
+    autocmd!
+    autocmd BufEnter * setlocal formatoptions-=r
+    autocmd BufEnter * setlocal formatoptions-=o
 augroup END
+
 "---------------------------------------------------------------------------
 " マクロおよびキー設定
 "---------------------------------------------------------------------------
