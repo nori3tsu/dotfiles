@@ -3,5 +3,32 @@ compinit
 
 bindkey -e
 
+# auto pushd
 setopt autopushd
+
+# auto_pushdで重複するディレクトリは記録しない
 setopt pushd_ignore_dups
+
+# history共有
+setopt share_history
+
+# 引数保管
+setopt magic_equal_subst
+
+# 履歴ファイル
+HISTFILE=~/.zsh_history
+
+# メモリ上に保存される件数（検索できる件数）
+HISTSIZE=100000
+
+# ファイルに保存される件数
+SAVEHIST=100000
+
+# 直前と同じコマンドの場合は履歴に追加しない
+setopt hist_ignore_dups
+
+# 重複するコマンドは古い法を削除する
+setopt hist_ignore_all_dups
+
+# 複数のzshを同時に使用した際に履歴ファイルを上書きせず追加する
+#setopt append_history
