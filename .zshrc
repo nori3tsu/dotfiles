@@ -32,3 +32,11 @@ setopt hist_ignore_all_dups
 
 # 複数のzshを同時に使用した際に履歴ファイルを上書きせず追加する
 #setopt append_history
+
+PERL_MB_OPT="--install_base \"/Users/lis6wf/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/lis6wf/perl5"; export PERL_MM_OPT;
+
+# zsh-completions
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
