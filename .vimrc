@@ -419,6 +419,17 @@ else
     " indent 2
     autocmd MyAutoCmd FileType ruby,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
+    " refactoring
+    NeoBundleLazy 'edsono/vim-matchit', {
+                \     "autoload": {
+                \         "filetypes": ["ruby"],
+                \     }
+                \ }
+    NeoBundleLazy 'ecomba/vim-ruby-refactoring', {
+                \     "autoload": {
+                \         "filetypes": ["ruby"],
+                \     }
+                \ }
     " Javascript
     "---------------------------------------------------------------------------
     " 補完
