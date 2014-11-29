@@ -33,7 +33,8 @@ brew install tmux
 brew install reattach-to-user-namespace
 
 brew install git
-brew install --default-names gnu-tar
+brew install gnu-tar
+brew install coreutils
 brew install jq
 brew install ngrep
 brew install colordiff

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# coreutils
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
+    PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 # pythonz
 if [ -d $HOME/.pythonz ]; then
     source $HOME/.pythonz/etc/bashrc
