@@ -28,6 +28,11 @@ if [ ! -f $HOME/.vim/syntax/ghmarkdown.vim ]; then
     curl -LO https://raw.github.com/jtratner/vim-flavored-markdown/master/syntax/ghmarkdown.vim
 fi
 
+# Tmux Plugin Manager
+if [[ -d $HOME/.tmux/plugins/tpm ]]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 # dotfiles
 DOT_FILES=(.bash_profile .bashrc .zprofile .zshrc .vimrc .tmux.conf)
 
