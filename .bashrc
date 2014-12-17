@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # alias
-alias ll='ls -laG'
+alias ll='ls -laG --color=auto'
 alias diff='colordiff'
 alias less='less -R'
 alias tar='gtar'
