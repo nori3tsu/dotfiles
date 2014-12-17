@@ -34,7 +34,7 @@ if [[ -d $HOME/.tmux/plugins/tpm ]]; then
 fi
 
 # dotfiles
-DOT_FILES=(.bash_profile .bashrc .zprofile .zshrc .vimrc .tmux.conf)
+DOT_FILES=(.bash_profile .bashrc .zprofile .zshrc .vimrc .tmux.conf .pryrc)
 
 for file in ${DOT_FILES[@]}
 do
