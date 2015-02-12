@@ -22,6 +22,15 @@ brew install tsung
 # AWS
 brew install awscli
 
+# Heroku
+brew install heroku
+
+# Image Magick
+brew install imagemagick
+
+# Stress test
+brew install siege
+
 # Tools
 brew install zsh
 brew install zsh-completions
@@ -39,3 +48,4 @@ brew install jq
 brew install ngrep
 brew install colordiff
 
+brew install terminal-notifier
