@@ -8,10 +8,12 @@ if has('gui_macvim')
   set number           " 行番号表示
   set nobackup         " バックアップなし
   set visualbell t_vb= " ビープ音なし
+  set textwidth=0
+  set formatoptions=q  " 自動改行なし
 
   colorscheme desert   " カラースキーマ
-  set columns=100      " 横幅
-  set lines=35         " 行数
+  "set columns=100      " 横幅
+  "set lines=35         " 行数
 
   " フォント設定
   " set guifontwide=Ricty:h12
