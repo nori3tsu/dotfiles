@@ -40,3 +40,12 @@ PERL_MM_OPT="INSTALL_BASE=/Users/lis6wf/perl5"; export PERL_MM_OPT;
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
+
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+# peco
+fpath=($HOME/.zsh/anyframe(N-/) $fpath)
+autoload -Uz anyframe-init
+anyframe-init
