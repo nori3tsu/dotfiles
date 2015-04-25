@@ -1,0 +1,10 @@
+bundler
+rbenv-rehash
+
+awesome_print
+heroku
+pry
+pry-byebug
+pry-doc
+pry-stack_explorer
+rubocop

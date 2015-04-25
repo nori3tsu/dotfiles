@@ -33,7 +33,22 @@ else
     if has('vim_starting')
         execute "set runtimepath+=" . s:neobundle_root
     endif
-    call neobundle#rc(s:bundle_root)
+    "call neobundle#rc(s:bundle_root)
+    "call neobundle#begin(s:bundle_root)
+    "call neobundle#end()
+
+    " Required:
+    call neobundle#begin(expand('~/.vim/bundle/'))
+
+    " Let NeoBundle manage NeoBundle
+    " Required:
+    NeoBundleFetch 'Shougo/neobundle.vim'
+
+    " My Bundles here:
+    " Refer to |:NeoBundle-examples|.
+    " Note: You don't set neobundle setting in .gvimrc!
+
+    call neobundle#end()
 
     " NeoBundle自身をNeoBundleで管理させる NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -48,6 +63,7 @@ else
                 \         "unix": "make -f make_unix.mak",
                 \     }
                 \ }
+    NeoBundle 'Shougo/neosnippet-snippets'
 
     "===========================================================================
     " Unite
@@ -97,6 +113,11 @@ else
         let g:unite_source_file_mru_long_limit = 1000000
         let g:unite_source_directory_mru_long_limit = 1000000
     endfunction
+
+    "---------------------------------------------------------------------------
+    " MRU
+    "---------------------------------------------------------------------------
+    NeoBundle 'Shougo/neomru.vim'
 
     "---------------------------------------------------------------------------
     " アウトライン
@@ -180,23 +201,6 @@ else
                 \ }
     nmap <Leader>T <plug>TaskList
 
-
-    "---------------------------------------------------------------------------
-    " 構文エラー表示
-    "---------------------------------------------------------------------------
-    NeoBundle "scrooloose/syntastic", {
-                \     "build": {
-                \         "mac": ["pip install flake8", "npm -g install coffeelint", "npm -g install jshint", "gem install rubocop"],
-                \         "unix": ["pip install flake8", "npm -g install coffeelint", "npm -g install jshint", "gem install rubocop"],
-                \     }
-                \ }
-    let g:syntastic_mode_map = { 'mode': 'passive',
-                \ 'active_filetypes': ['javascript', 'coffee'] }
-    "let g:syntastic_javascript_checker = "jshint"
-    let g:syntastic_javascript_jshint_conf = "~/.jshintrc"
-    "let g:syntastic_ruby_checkers = ['rubocop']
-    "let g:syntastic_python_checkers = ['pylint']
-    let g:syntastic_quiet_warnings = 0
 
     "---------------------------------------------------------------------------
     " クラスアウトライン
@@ -351,6 +355,19 @@ else
     "===========================================================================
     " 言語
     "===========================================================================
+    "---------------------------------------------------------------------------
+    " JSON
+    "---------------------------------------------------------------------------
+    NeoBundleLazy "elzr/vim-json", {
+                \     "autoload": {
+                \         "filetypes": ["json"],
+                \     }
+                \ }
+    let s:hooks = neobundle#get_hooks("vim-json")
+    function! s:hooks.on_source(bundle)
+        let g:vim_json_syntax_conceal = 0
+    endfunction
+
     " Python
     "---------------------------------------------------------------------------
     " コーディングスタイル
@@ -700,7 +717,7 @@ if has('unnamedplus')
     " set clipboard& clipboard+=unnamedplus
     set clipboard& clipboard+=unnamedplus,unnamed
 else
-    " set clipboard& clipboard+=unnamed,autoselect
+    "set clipboard& clipboard+=unnamed,autoselect
     set clipboard& clipboard+=unnamed
 endif
 

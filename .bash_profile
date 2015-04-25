@@ -7,9 +7,9 @@ if [ -d /usr/local/opt/coreutils/libexec/gnubin ]; then
 fi
 
 # pythonz
-if [ -d $HOME/.pythonz ]; then
-    source $HOME/.pythonz/etc/bashrc
-fi
+#if [ -d $HOME/.pythonz ]; then
+    #source $HOME/.pythonz/etc/bashrc
+#fi
 
 # rbenv
 if [ -f /usr/local/bin/rbenv ]; then
@@ -18,12 +18,12 @@ if [ -f /usr/local/bin/rbenv ]; then
 fi
 
 # virtualenv
-if [ -d $HOME/.virtualenvs ]; then
-    # virtualenv
-    source `which virtualenvwrapper.sh`
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PIP_RESPECT_VIRTUALENV=true
-fi
+#if [ -d $HOME/.virtualenvs ]; then
+    ## virtualenv
+    #source `which virtualenvwrapper.sh`
+    #export WORKON_HOME=$HOME/.virtualenvs
+    #export PIP_RESPECT_VIRTUALENV=true
+#fi
 
 # git
 git config --global color.ui auto
