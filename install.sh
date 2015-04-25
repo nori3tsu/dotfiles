@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# homebrew
+if [ ! -f /usr/local/bin/brew ]; then
+    echo "Install Homebrew:"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    echo "Install Hombrew libraries:"
+    bash `dirname $0`/brew-installer.sh
+fi
+
 # vim syntax folder
 if [ ! -d $HOME/.vim/syntax ]; then
     echo "Create a vim syntax directory."
