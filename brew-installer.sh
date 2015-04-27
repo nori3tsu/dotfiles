@@ -68,6 +68,7 @@ brew cask install shiftit
 brew cask install skype
 brew cask install slack
 brew cask install sourcetree
+brew cask install thunderbird
 brew cask install vagrant
 brew cask install virtualbox
 brew cask install xquartz
