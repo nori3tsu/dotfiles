@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # alias
+alias vi='vim'
 alias ll='ls -laG --color=auto'
 alias diff='colordiff'
 alias less='less -R'
