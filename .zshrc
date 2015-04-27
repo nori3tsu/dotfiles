@@ -44,8 +44,3 @@ fi
 # cdr
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
-
-# peco
-fpath=($HOME/.zsh/anyframe(N-/) $fpath)
-autoload -Uz anyframe-init
-anyframe-init
