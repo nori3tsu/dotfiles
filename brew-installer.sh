@@ -57,7 +57,6 @@ brew cask install karabiner
 brew cask install kindle
 brew cask install libreoffice
 brew cask install macvim
-brew cask install night-owl
 brew cask install pandoc
 brew cask install qlcolorcode
 brew cask install qlmarkdown
