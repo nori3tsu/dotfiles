@@ -42,6 +42,7 @@ brew cask install caffeine
 brew cask install cyberduck
 brew cask install dash
 brew cask install dropbox
+brew cask install filezilla
 brew cask install firefox
 brew cask install gimp
 brew cask install github
