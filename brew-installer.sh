@@ -1,7 +1,6 @@
 #!/bin/bash -e
 
 brew tap homebrew/binary
-brew tap phinze/homebrew-cask
 
 brew install awscli
 brew install colordiff
