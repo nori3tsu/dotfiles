@@ -19,8 +19,6 @@ install fancy-new-file
 install file-icons
 install highlight-line
 install jumpy
-install linter-rubocop
-install linter-shellcheck
 install no-caffeine-syntax
 install preview
 install project-manager
