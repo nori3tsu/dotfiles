@@ -1,0 +1,153 @@
+# This is the configuration used to check the rubocop source code.
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - '.bundle/**/*'
+    - 'Gemfile'
+
+# ファイル先頭のエンコード宣言をチェック
+Style/Encoding:
+  Enabled: false
+
+# マルチバイトコメントをチェック
+AsciiComments:
+  Enabled: false
+
+# 引数の改行は第1パラメータの位置に合わせる
+Style/AlignParameters:
+  Enabled: false
+
+# lambdaの呼び出し方法をcallで統一
+Style/LambdaCall:
+  Enabled: true
+  Exclude:
+    - 'app/views/**/*.jbuilder'
+
+# 冗長なbegin開始を検出する
+Style/RedundantBegin:
+  Enabled: true
+
+# Offense count: 1
+Lint/NonLocalExitFromIterator:
+  Enabled: false
+
+# rescue Exceptionの不可
+Lint/RescueException:
+  Enabled: true
+
+# 使わないブロック引数やローカル変数の先頭が_かチェックする
+Lint/UselessAssignment:
+  Enabled: true
+
+# Abc Metric [http://c2.com/cgi/wiki?AbcMetric]のポイントチェック
+# デフォルトは15
+Metrics/AbcSize:
+  Max: 15
+
+# 循環的複雑度のチェック
+# デフォルトは6
+Metrics/CyclomaticComplexity:
+  Max: 6
+
+# 1行の許容文字数
+# デフォルトは80
+Metrics/LineLength:
+  Max: 120
+
+# 1メソッドの許容行数
+# デフォルトは10
+Metrics/MethodLength:
+  Max: 15
+
+# Perceived複雑度のチェック
+# デフォルトは7
+Metrics/PerceivedComplexity:
+  Max: 7
+
+# クラスやモジュールの階層をAAA::BBB形式、またはネスト形式で統一する
+# EnforcedStyle:  nested / compact
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 閉じる括弧を改行している
+Style/ClosingParenthesisIndentation:
+  Enabled: true
+
+# 非推奨のHashメソッドのチェック
+# has_key?、has_value?が対象
+Style/DeprecatedHashMethods:
+  Enabled: true
+
+# ドキュメントの無い public class を許可しない
+Style/Documentation:
+  Enabled: false
+
+# !! の使用不可
+Style/DoubleNegation:
+  Enabled: true
+
+# Hashのkey / value記述形式をkey: value 形式で統一する
+Style/HashSyntax:
+  Enabled: true
+
+# 複数行ブロックでdo...endではなく、{...}を使用している
+Style/BlockDelimiters:
+  Enabled: false
+
+# 1行ブロックで{...}ではなく、do...endを使用している
+Style/MultilineBlockChain:
+  Enabled: true
+
+# 否定のif条件をチェックする
+Style/NegatedIf:
+  Enabled: false
+
+# nilチェックはxx == nilではなく、nil?を使う
+Style/NilComparison:
+  Enabled: true
+
+# if条件を()で囲わない
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+# 冗長なreturn記述を検出する
+Style/RedundantReturn:
+  Enabled: true
+
+# 当該正規表現の記述は%r記法がよい
+Style/RegexpLiteral:
+  Enabled: false
+
+# 例外送出時のraise / fail チェック
+# デフォルトでは新規はfail、再送出はraiseでチェック
+Style/SignalException:
+  Enabled: true
+
+# 1行関数は利用しない
+Style/SingleLineMethods:
+  Enabled: true
+
+# スペースの後のコンマを検出する
+Style/SpaceAfterComma:
+  Enabled: true
+
+# コンマの前のスペースを検出する
+Style/SpaceBeforeComma:
+  Enabled: true
+
+# ブロック呼び出しのブレースにおいて、開始直後、終了直前、空ブレースの間に半角スペースが必要
+Style/SpaceInsideBlockBraces:
+  Enabled: true
+
+# ハッシュリテラルにおいて、開始直後、終了直前、空ブレースの間に半角スペースが必要
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# 変数展開やエスケープが不要な場合はシングルクォートを使う
+Style/StringLiterals:
+  Enabled: true
+
+# ファイルの末尾に1行の空行が必要
+Style/TrailingBlankLines:
+  Enabled: true
