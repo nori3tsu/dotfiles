@@ -1,0 +1,24 @@
+"*":
+  editor:
+    fontSize: 14
+    showIndentGuide: true
+    softTabs: false
+    invisibles: {}
+    fontFamily: "Ricty Diminished"
+  core:
+    themes: [
+      "atom-dark-ui"
+      "monokai"
+    ]
+  "exception-reporting":
+    userId: "3232268a-ee49-9367-ad77-e430f68dc60c"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "9eb92f7d9ab2e4283370e97abfb33e54cd3ce687"
+  "highlight-line":
+    hideHighlightOnSelect: true
+  "atom-color-highlight": {}
+  "recent-files":
+    updated: false
+  emmet: {}
