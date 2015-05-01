@@ -8,7 +8,7 @@
   core:
     themes: [
       "atom-dark-ui"
-      "monokai"
+      "no-caffeine-syntax"
     ]
   "exception-reporting":
     userId: "3232268a-ee49-9367-ad77-e430f68dc60c"
@@ -22,3 +22,11 @@
   "recent-files":
     updated: false
   emmet: {}
+  "atom-lint":
+    rubocop:
+      path: "/Users/Nori/.rbenv/shims/rubocop"
+    showViolationMetadata: false
+  "atom-beautify":
+    _analyticsUserId: "2643a4a0-a113-42fe-aac2-6d160c9df1b6"
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
