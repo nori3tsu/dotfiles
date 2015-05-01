@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# font
+# Ricty Diminished
+if [ ! -d $HOME/.font/RictyDiminished ]; then
+    git clone git@github.com:yascentur/RictyDiminished.git $HOME/.font/RictyDiminished
+    cp -f $HOME/.font/RictyDiminished/*.ttf $HOME/Library/Fonts/.
+fi
+
 # homebrew
 if [ ! -f /usr/local/bin/brew ]; then
     echo "Install Homebrew:"
