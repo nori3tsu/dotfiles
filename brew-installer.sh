@@ -21,6 +21,7 @@ brew install peco
 brew install rbenv
 brew install reattach-to-user-namespace
 brew install ruby-build
+brew install shellcheck
 brew install siege
 brew install terminal-notifier
 brew install tmux
