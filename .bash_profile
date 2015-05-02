@@ -42,6 +42,7 @@ if [ -f ~/.env ]; then
     source ~/.env
 fi
 
+export LANG=en_US.UTF-8
 export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # prompt
