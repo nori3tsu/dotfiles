@@ -36,12 +36,13 @@ brew install caskroom/cask/brew-cask
 brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
+brew cask install bartender
 brew cask install bettertouchtool
 brew cask install betterzipql
-brew cask install caffeine
 brew cask install cyberduck
 brew cask install dash
 brew cask install dropbox
+brew cask install easysimbl
 brew cask install filezilla
 brew cask install firefox
 brew cask install gimp
@@ -53,6 +54,7 @@ brew cask install google-japanese-ime
 brew cask install gyazo
 brew cask install handbrake
 brew cask install hyperswitch
+brew cask install insomniax
 brew cask install iterm2
 brew cask install karabiner
 brew cask install kindle
