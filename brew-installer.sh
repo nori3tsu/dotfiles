@@ -36,6 +36,7 @@ brew install caskroom/cask/brew-cask
 brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
+brew cask install asteroid
 brew cask install bartender
 brew cask install bettertouchtool
 brew cask install betterzipql
@@ -54,6 +55,7 @@ brew cask install google-japanese-ime
 brew cask install gyazo
 brew cask install handbrake
 brew cask install hyperswitch
+brew cask install ifunbox
 brew cask install insomniax
 brew cask install iterm2
 brew cask install karabiner
