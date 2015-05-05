@@ -240,6 +240,11 @@ else
     " 編集
     "===========================================================================
     "---------------------------------------------------------------------------
+    " EditConfig
+    "---------------------------------------------------------------------------
+    NeoBundle "editorconfig/editorconfig-vim"
+
+    "---------------------------------------------------------------------------
     " ヤンク循環
     "---------------------------------------------------------------------------
     NeoBundle "vim-scripts/YankRing.vim"
@@ -432,9 +437,6 @@ else
                 \         "filetypes": ["python", "python3", "djangohtml"],
                 \     }
                 \ }
-    " Ruby
-    " indent 2
-    autocmd MyAutoCmd FileType ruby,yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
     " refactoring
     NeoBundleLazy 'edsono/vim-matchit', {

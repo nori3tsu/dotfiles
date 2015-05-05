@@ -66,19 +66,20 @@ fi
 
 # dotfiles
 DOT_FILES=(
-  .bash_profile
-  .bashrc
-  .zprofile
-  .zshrc
-  .vimrc
-  .tmux.conf
-  .pryrc
-  .rbenv/default-gems
   .atom/config.cson
   .atom/init.coffee
   .atom/keymap.cson
   .atom/snippets.cson
   .atom/styles.less
+  .bash_profile
+  .bashrc
+  .editorconfig
+  .pryrc
+  .rbenv/default-gems
+  .tmux.conf
+  .vimrc
+  .zprofile
+  .zshrc
 )
 
 echo "Create symbolic link:"
