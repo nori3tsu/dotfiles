@@ -33,6 +33,7 @@ brew install zsh-completions
 brew install Caskroom/cask/tuntap
 brew install caskroom/cask/brew-cask
 
+
 brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
@@ -40,6 +41,7 @@ brew cask install asteroid
 brew cask install bartender
 brew cask install bettertouchtool
 brew cask install betterzipql
+brew cask install cornerstone
 brew cask install cyberduck
 brew cask install dash
 brew cask install dropbox
