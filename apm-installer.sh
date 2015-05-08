@@ -14,13 +14,11 @@ install atom-lint
 install autocomplete-paths
 install autocomplete-plus
 install autocomplete-snippets
-install dash
 install editorconfig
 install fancy-new-file
 install file-icons
 install highlight-line
 install jumpy
-install minimap
 install no-caffeine-syntax
 install preview
 install project-manager
