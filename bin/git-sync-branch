@@ -1,0 +1,22 @@
+#!/bin/bash
+
+run() {
+  git remote prune origin
+
+  local branches=$(git branch | sed 's/\*/ /' | grep -v -e "$(git branch -r | grep -v 'HEAD' | awk -F '/' '{ print $2 }' | xargs | sed 's/ /\\\|/')")
+
+  if [[ -z $branches ]]; then
+    echo 'Target branches is nothing.'
+  else
+    echo "$branches"
+    echo
+    echo -n "Do you want to delete the above branches? [y|n]: "
+
+    read i
+    if [[ $i == "y" ]]; then
+      echo "$branches" | xargs git branch -d
+    fi
+  fi
+}
+
+run
