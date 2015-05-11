@@ -30,3 +30,4 @@ install rspec-snippets
 install script
 install show-ideographic-space
 install sort-lines
+install tabs-to-spaces
