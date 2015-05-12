@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 brew tap homebrew/binary
+brew tap caskroom/versions
 
 brew install awscli
 brew install colordiff
@@ -10,6 +11,7 @@ brew install erlang
 brew install git
 brew install gnu-tar
 brew install go
+brew install gpg
 brew install gradle
 brew install heroku
 brew install imagemagick
@@ -64,6 +66,7 @@ brew cask install karabiner
 brew cask install kindle
 brew cask install libreoffice
 brew cask install macvim
+brew cask install electrum
 brew cask install pandoc
 brew cask install qlcolorcode
 brew cask install qlmarkdown
