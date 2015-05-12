@@ -36,7 +36,6 @@ brew install Caskroom/cask/tuntap
 brew install caskroom/cask/brew-cask
 
 
-brew cask install 1password
 brew cask install alfred
 brew cask install appcleaner
 brew cask install asteroid
