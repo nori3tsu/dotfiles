@@ -52,12 +52,14 @@ cask_install() {
   fi
 }
 
+#cask_install electrum
 cask_install alfred
 cask_install appcleaner
 cask_install asteroid
 cask_install bartender
 cask_install bettertouchtool
 cask_install betterzipql
+cask_install caffeine
 cask_install cornerstone
 cask_install cyberduck
 cask_install dash
@@ -81,7 +83,6 @@ cask_install karabiner
 cask_install kindle
 cask_install libreoffice
 cask_install macvim
-#cask_install electrum
 cask_install pandoc
 cask_install qlcolorcode
 cask_install qlmarkdown
