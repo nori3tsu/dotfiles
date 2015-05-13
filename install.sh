@@ -80,6 +80,7 @@ DOT_FILES=(
 .vimrc
 .zprofile
 .zshrc
+bin/git-sync-branch
 )
 
 echo "Create symbolic link:"
