@@ -60,6 +60,7 @@ cask_install bartender
 cask_install bettertouchtool
 cask_install betterzipql
 cask_install caffeine
+cask_install celi
 cask_install cornerstone
 cask_install cyberduck
 cask_install dash
