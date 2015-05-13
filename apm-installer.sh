@@ -14,6 +14,7 @@ install atom-lint
 install autocomplete-paths
 install autocomplete-plus
 install autocomplete-snippets
+install docblockr
 install editorconfig
 install fancy-new-file
 install file-icons
@@ -24,10 +25,10 @@ install preview
 install project-manager
 install rails-transporter
 install recent-files
-install regex-railroad-diagram
 install rspec
 install rspec-snippets
 install script
 install show-ideographic-space
 install sort-lines
 install tabs-to-spaces
+install vim-mode
