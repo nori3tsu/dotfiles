@@ -60,7 +60,6 @@ cask_install bartender
 cask_install bettertouchtool
 cask_install betterzipql
 cask_install caffeine
-cask_install celi
 cask_install cornerstone
 cask_install cyberduck
 cask_install dash
@@ -90,6 +89,7 @@ cask_install qlmarkdown
 cask_install qlstephen
 cask_install quicklook-csv
 cask_install quicklook-json
+cask_install seil
 cask_install shiftit
 cask_install skype
 cask_install slack
