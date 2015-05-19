@@ -65,6 +65,7 @@ cask_install cyberduck
 cask_install dash
 cask_install dropbox
 cask_install easysimbl
+cask_install evernote
 cask_install filezilla
 cask_install firefox
 cask_install gimp
