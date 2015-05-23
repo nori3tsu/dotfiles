@@ -92,6 +92,7 @@ cask_install quicklook-csv
 cask_install quicklook-json
 cask_install seil
 cask_install shiftit
+cask_install skitch
 cask_install skype
 cask_install slack
 cask_install sourcetree
