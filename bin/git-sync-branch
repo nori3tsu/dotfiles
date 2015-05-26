@@ -3,7 +3,7 @@
 main() {
   git remote prune origin
 
-  local branches=$(git branch | sed 's/\*/ /' | grep -v -e "$(git branch -r | grep -v 'HEAD' | awk -F '/' '{ print $2 }' | xargs | sed 's/ /\\\|/')")
+  local branches=$(git branch | sed 's/\*/ /' | grep -v -e "$(git branch -r | grep -v 'HEAD' | awk -F '/' '{ print $2 }' | xargs | sed 's/ /\\\|/g')")
 
   if [[ -z $branches ]]; then
     echo 'Target branches is nothing.'
