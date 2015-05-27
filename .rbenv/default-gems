@@ -2,7 +2,6 @@ bundler
 rbenv-rehash
 
 awesome_print
-heroku
 htmlbeautifier
 pry
 pry-byebug
