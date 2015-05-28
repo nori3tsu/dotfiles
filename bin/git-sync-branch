@@ -1,13 +1,16 @@
 #!/bin/bash
 
 main() {
+  echo "Prune remote branches:"
   git remote prune origin
+  echo
 
   local branches=$(git branch | sed 's/\*/ /' | grep -v -e "$(git branch -r | grep -v 'HEAD' | awk -F '/' '{ print $2 }' | xargs | sed 's/ /\\\|/g')")
 
   if [[ -z $branches ]]; then
-    echo 'Target branches is nothing.'
+    echo 'Unnecessary branches is nothing.'
   else
+    echo "Unnecessary branches:"
     echo "$branches"
     echo
     echo -n "Do you want to delete the above branches? [y|n]: "
