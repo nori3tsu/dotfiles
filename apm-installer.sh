@@ -18,8 +18,8 @@ install docblockr
 install editorconfig
 install fancy-new-file
 install file-icons
-install highlight-line
 install jumpy
+install markdown-pdf
 install no-caffeine-syntax
 install preview
 install project-manager
