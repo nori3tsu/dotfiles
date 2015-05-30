@@ -78,6 +78,7 @@ cask_install gyazo
 cask_install handbrake
 cask_install hyperswitch
 cask_install ifunbox
+cask_install image-tool
 cask_install insomniax
 cask_install iterm2
 cask_install karabiner
