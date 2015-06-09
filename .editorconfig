@@ -10,9 +10,9 @@ insert_final_newline = true
 charset = utf-8
 indent_size = 2
 indent_style = space
- 
-[*.{rb,js,sh}]
 trim_trailing_whitespace = true
+
+[*.{rb,js,sh}]
 insert_final_newline = false
 trim_traling_whitespace = true
 max_line_length = 120
