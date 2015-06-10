@@ -1,10 +1,12 @@
 "*":
   editor:
-    fontSize: 14
     showIndentGuide: true
-    softTabs: false
     invisibles: {}
     fontFamily: "Ricty Diminished"
+    softTabs: false
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    preferredLineLength: 120
   core:
     themes: [
       "atom-dark-ui"
@@ -32,3 +34,5 @@
     _analyticsUserId: "2643a4a0-a113-42fe-aac2-6d160c9df1b6"
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+  rspec:
+    command: "bundle exec rspec"
