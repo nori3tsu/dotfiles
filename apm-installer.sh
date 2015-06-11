@@ -18,6 +18,7 @@ install docblockr
 install editorconfig
 install fancy-new-file
 install file-icons
+install japanese-wrap
 install jumpy
 install markdown-pdf
 install no-caffeine-syntax
@@ -32,3 +33,10 @@ install show-ideographic-space
 install sort-lines
 install tabs-to-spaces
 install vim-mode
+install toggle-quotes
+install tab-history
+install last-cursor-position
+install atom-color-highlight
+install atom-html-preview
+install live-archive
+install recent-files-fuzzy-finder
