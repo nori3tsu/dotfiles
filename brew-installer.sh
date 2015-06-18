@@ -70,7 +70,6 @@ cask_install filezilla
 cask_install firefox
 cask_install gimp
 cask_install github
-cask_install goofy
 cask_install google-chrome
 cask_install google-drive
 cask_install google-japanese-ime
@@ -85,6 +84,7 @@ cask_install karabiner
 cask_install kindle
 cask_install libreoffice
 cask_install macvim
+cask_install messenger
 cask_install pandoc
 cask_install qlcolorcode
 cask_install qlmarkdown
