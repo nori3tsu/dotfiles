@@ -41,4 +41,4 @@ function git-current-branch {
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
-PROMPT='[${USER}%F{blue}@%f${HOST%%.*} %1~$(git-current-branch)]%(?,%F{green},%F{red})%(!.#.$)%f '
+PROMPT='[${USER}%F{blue}@%f${HOST%%.*} %~$(git-current-branch)]%(?,%F{green},%F{red})%(!.#.$)%f '
