@@ -2,6 +2,7 @@ bundler
 rbenv-rehash
 
 awesome_print
+cocoapods
 htmlbeautifier
 pry
 pry-byebug
