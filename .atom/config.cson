@@ -24,15 +24,21 @@
   "recent-files":
     updated: false
   emmet: {}
-  "atom-lint":
-    rubocop:
-      path: "/Users/Nori/.rbenv/shims/rubocop"
-    shellcheck:
-      path: "/usr/local/bin/shellcheck"
-    showViolationMetadata: false
   "atom-beautify":
     _analyticsUserId: "2643a4a0-a113-42fe-aac2-6d160c9df1b6"
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
   rspec:
     command: "bundle exec rspec"
+  "vim-mode": {}
+  linter: {}
+  "linter-rubocop":
+    executablePath: "/Users/Nori/.rbenv/shims/rubocop"
+  "linter-ruby":
+    rubyExecutablePath: "/Users/Nori/.rbenv/shims/ruby"
+  "linter-erb":
+    erbExecutablePath: "/Users/Nori/.rbenv/shims/erb"
+  "linter-shellcheck":
+    shellcheckExecutablePath: "/usr/local/bin/shellcheck"
+  "linter-csslint": {}
+  "linter-jsonlint": {}
