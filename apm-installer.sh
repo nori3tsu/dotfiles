@@ -8,7 +8,6 @@ install() {
 }
 
 
-install Sublime-Style-Column-Selection
 install atom-alignment
 install atom-beautify
 install atom-html-preview
@@ -29,6 +28,7 @@ install linter-ruby
 install linter-shellcheck
 install live-archive
 install markdown-pdf
+install multi-cursor
 install no-caffeine-syntax
 install open-recent
 install preview
