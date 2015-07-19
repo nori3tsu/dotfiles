@@ -7,36 +7,38 @@ install() {
   fi
 }
 
-install Sublime-Style-Column-Selection
+
 install atom-alignment
 install atom-beautify
-install atom-lint
+install atom-html-preview
 install autocomplete-paths
-install autocomplete-plus
-install autocomplete-snippets
 install docblockr
 install editorconfig
-install fancy-new-file
 install file-icons
+install file-types
 install japanese-wrap
 install jumpy
+install last-cursor-position
+install linter
+install linter-csslint
+install linter-erb
+install linter-jsonlint
+install linter-rubocop
+install linter-ruby
+install linter-shellcheck
+install live-archive
 install markdown-pdf
+install multi-cursor
 install no-caffeine-syntax
+install open-recent
 install preview
-install project-manager
 install rails-transporter
-install recent-files
+install recent-files-fuzzy-finder
 install rspec
 install rspec-snippets
 install script
 install show-ideographic-space
 install sort-lines
 install tabs-to-spaces
-install vim-mode
 install toggle-quotes
-install tab-history
-install last-cursor-position
-install atom-color-highlight
-install atom-html-preview
-install live-archive
-install recent-files-fuzzy-finder
+install vim-mode
