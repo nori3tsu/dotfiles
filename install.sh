@@ -76,6 +76,7 @@ DOT_FILES=(
 .editorconfig
 .pryrc
 .rbenv/default-gems
+.rubocop.yml
 .tmux.conf
 .vimrc
 .zprofile
