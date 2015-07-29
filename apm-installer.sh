@@ -20,8 +20,10 @@ install japanese-wrap
 install jumpy
 install last-cursor-position
 install linter
+install linter-coffeelint
 install linter-csslint
 install linter-erb
+install linter-eslint
 install linter-jsonlint
 install linter-rubocop
 install linter-ruby
