@@ -9,6 +9,7 @@ alias tar='gtar'
 alias git_soft_rest='git reset --soft HEAD^'
 alias jf='pbpaste | jq . | pbcopy'
 alias fin='terminal-notifier -message "Fin"'
+alias grep='ggrep'
 
 if [ `uname` = "Darwin" ];then
     alias updatedb='sudo /usr/libexec/locate.updatedb'

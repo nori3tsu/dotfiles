@@ -1,7 +1,8 @@
 #!/bin/bash -e
 
-brew tap homebrew/binary
 brew tap caskroom/versions
+brew tap homebrew/binary
+brew tap homebrew/dupes
 brew install Caskroom/cask/tuntap
 brew install caskroom/cask/brew-cask
 
@@ -42,6 +43,7 @@ install tsung
 install vim
 install zsh
 install zsh-completions
+install homebrew/dupes/grep
 
 cask_install() {
   local pkg=$1
