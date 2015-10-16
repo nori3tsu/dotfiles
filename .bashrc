@@ -6,7 +6,7 @@ alias ll='ls -laG --color=auto'
 alias diff='colordiff'
 alias less='less -R'
 alias tar='gtar'
-alias fin='terminal-notifier -message "Fin"'
+alias popup='terminal-notifier -message'
 alias be='bundle exec'
 alias grep='ggrep'
 
