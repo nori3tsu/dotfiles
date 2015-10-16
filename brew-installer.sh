@@ -1,6 +1,5 @@
 #!/bin/bash -e
 
-brew tap caskroom/versions
 brew tap homebrew/binary
 brew tap homebrew/dupes
 brew install Caskroom/cask/tuntap
