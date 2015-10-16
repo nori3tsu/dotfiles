@@ -48,8 +48,6 @@ else
     " Refer to |:NeoBundle-examples|.
     " Note: You don't set neobundle setting in .gvimrc!
 
-    call neobundle#end()
-
     " NeoBundle自身をNeoBundleで管理させる NeoBundleFetch 'Shougo/neobundle.vim'
 
     " 非同期通信を可能にする
@@ -608,6 +606,8 @@ else
 
     " インストールされていないプラグインのチェックおよびダウンロード
     NeoBundleCheck
+
+    call neobundle#end()
 endif
 
 " ファイルタイププラグインおよびインデントを有効化

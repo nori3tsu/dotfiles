@@ -15,14 +15,16 @@ install() {
 }
 
 install awscli
+install boot2docker
 install colordiff
 install coreutils
 install ctags
+install docker
 install erlang
 install git
 install gnu-tar
-install go
 install gnupg
+install go
 install gradle
 install heroku-toolbelt
 install imagemagick
