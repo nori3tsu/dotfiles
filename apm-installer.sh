@@ -44,3 +44,10 @@ install sort-lines
 install tabs-to-spaces
 install toggle-quotes
 install vim-mode
+
+# Git
+install git-history
+install merge-conflicts
+install tualo-git-context
+install git-plus
+install git-log
