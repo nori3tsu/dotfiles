@@ -106,3 +106,5 @@ cask_install thunderbird
 cask_install vagrant
 cask_install virtualbox
 cask_install xquartz
+# Animated GIF
+cask_install licecap
